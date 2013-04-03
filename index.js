@@ -5,7 +5,6 @@
 var fs = require('fs')
 var path = require('path')
 var spawn = require('child_process').spawn
-var pathy = require('pathy')
 
 require('mkee')(AutoConvert)
 
@@ -22,7 +21,6 @@ function AutoConvert(config){
   var ext = config.ext
 
   if(config.watch){
-    this.on('error', function(e){console.error('Error: ' + e.message)})
     fs.watch(src, check)
   }
 
@@ -133,5 +131,6 @@ if(require.main == module){
   var cfgfile = process.argv[2] || 'config.json'
   var config = require(path.resolve(cfgfile))
 
-  new AutoConvert(config)
+  var ac = new AutoConvert(config)
+  ac.on('error', function(e){console.error('Error: ' + e.message)})
 }
