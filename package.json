@@ -1,0 +1,16 @@
+{
+  "name": "auto-convert",
+  "version": "0.0.0",
+  "description": "Runs the specified conversion scripts automagically",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin" : {"auto-convert": "./index.js"},
+  "repository": "",
+  "author": "",
+  "license": "BSD",
+  "dependencies": {
+    "mkee": "0.0.0"
+  }
+}
